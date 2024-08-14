@@ -8,6 +8,7 @@ namespace Rpg22.Scenes
 {
     public class InventoryScene : Scene
     {
+        string input;
         public InventoryScene(Game game) : base(game)
         {
         }
@@ -28,12 +29,14 @@ namespace Rpg22.Scenes
 
         public override void Input()
         {
-            // TODO : 인벤토리 입력 
+            // TODO : 인벤토리 입력
+            input = Console.ReadLine();
         }
 
         public override void Render()
         {
             // TODO : 인벤토리 상황 출력
+            game.inventory.PrintInventory();
         }
 
         public override void Update()

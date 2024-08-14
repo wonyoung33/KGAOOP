@@ -19,6 +19,9 @@ namespace Rpg22
         private Player player;
         public Player Player { get { return player; } set { player = value; } }
 
+        public Inventory inventory;
+
+        public Item[] items;
         public void Run()
         {
             Start();
@@ -55,8 +58,16 @@ namespace Rpg22
             scenes[(int)SceneType.Inventory] = new InventoryScene(this);
             scenes[(int)SceneType.Shop] = new ShopScene(this);
 
-            curScene = scenes[(int)SceneType.Title];
+            inventory = new Inventory();
+            items = new Item[3];
+
+            items[0] = new Item("물약", 100);
+            items[1] = new Item("검", 200);
+            items[2] = new Item("방패", 300);
+
+            curScene = scenes[(int)SceneType.Shop];
             curScene.Enter();
+
         }
 
         private void End()
