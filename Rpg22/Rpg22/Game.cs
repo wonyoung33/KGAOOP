@@ -12,6 +12,8 @@ namespace Rpg22
     {
         private bool isRunning;
 
+        private Scene prevScene;
+
         private Scene[] scenes;
         private Scene curScene;
         public Scene CurScene { get { return curScene; } }
